@@ -63,24 +63,23 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public Vector2 GetFriction()
-{
-    // If there's input (player is moving), use moveFriction to slow down movement
-    if (moveDirection != Vector2.zero)
     {
-        return new Vector2(
-            moveDirection.x != 0 ? moveFriction.x : 0,
-            moveDirection.y != 0 ? moveFriction.y : 0
-        );
+        // If there's input (player is moving), use moveFriction to slow down movement
+        if (moveDirection != Vector2.zero)
+        {
+            return new Vector2(
+                moveDirection.x != 0 ? moveFriction.x : 0,
+                moveDirection.y != 0 ? moveFriction.y : 0
+            );
+        }
+        else // If there's no input, use stopFriction to bring the player to a stop
+        {
+            return new Vector2(
+                rb.velocity.x != 0 ? stopFriction.x : 0,
+                rb.velocity.y != 0 ? stopFriction.y : 0
+            );
+        }
     }
-    else // If there's no input, use stopFriction to bring the player to a stop
-    {
-        return new Vector2(
-            rb.velocity.x != 0 ? stopFriction.x : 0,
-            rb.velocity.y != 0 ? stopFriction.y : 0
-        );
-    }
-}
-
 
     public void MoveBound()
     {
@@ -90,5 +89,21 @@ public class PlayerMovement : MonoBehaviour
     public bool IsMoving()
     {
         return rb.velocity != Vector2.zero;
+    }
+
+    void LateUpdate()
+    {
+        LimitMovementToCamera();
+    }
+
+    private void LimitMovementToCamera()
+    {
+        Vector3 position = transform.position;
+        Vector3 viewportPosition = Camera.main.WorldToViewportPoint(position);
+
+        viewportPosition.x = Mathf.Clamp(viewportPosition.x, 0.01f, 0.99f);
+        viewportPosition.y = Mathf.Clamp(viewportPosition.y, 0.0f, 0.95f); // Limit top movement
+
+        transform.position = Camera.main.ViewportToWorldPoint(viewportPosition);
     }
 }
