@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        rb.freezeRotation = true; // Prevent rotation
 
         // Calculate initial acceleration and friction values
         moveVelocity = 2 * maxSpeed / timeToFullSpeed;
