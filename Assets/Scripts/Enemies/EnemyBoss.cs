@@ -17,7 +17,7 @@ public class EnemyBoss : Enemy
         if (weapon != null)
         {
             weapon = Instantiate(weapon, transform);
-            weapon.transform.localPosition = Vector3.zero;
+            weapon.transform.localPosition = new Vector3(0, -0.67f, 0); // Move the weapon downwards
             weapon.transform.localRotation = Quaternion.Euler(0, 0, 180); // Rotate the weapon 180 degrees
             weapon.shootIntervalInSeconds = shootSpeedInterval; // Set the shoot interval based on shoot speed
         }

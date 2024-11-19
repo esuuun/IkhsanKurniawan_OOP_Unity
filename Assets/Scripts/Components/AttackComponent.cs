@@ -8,8 +8,6 @@ public class AttackComponent : MonoBehaviour
 
      void OnTriggerEnter(Collider other)
     {
-
-
         HitboxComponent hitbox = other.GetComponent<HitboxComponent>();
         if (hitbox != null)
         {
@@ -18,11 +16,11 @@ public class AttackComponent : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        // var invincibilityComponent = collision.gameObject.GetComponent<InvincibilityComponent>();
-        // if (invincibilityComponent != null)
-        // {
-        //     invincibilityComponent.StartInvincibility();
-        // }
+        var invincibilityComponent = collision.gameObject.GetComponent<InvincibilityComponent>();
+        if (invincibilityComponent != null)
+        {
+            invincibilityComponent.StartInvincibility();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -42,7 +40,7 @@ public class AttackComponent : MonoBehaviour
                 hitbox.Damage(collision.GetComponent<Bullet>());
             }
         }
-        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Enemy") 
+        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Boss" ) 
         {   
             if (hitbox != null)
             {
