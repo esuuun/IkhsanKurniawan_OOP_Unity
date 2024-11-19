@@ -7,8 +7,8 @@ public class Bullet : MonoBehaviour
 {
     [Header("Bullet Stats")]
     public float bulletSpeed = 20;
-    public int damage = 10;
-    private Rigidbody2D rb;
+    public int damage;
+    private Rigidbody2D rb;    
 
     public IObjectPool<Bullet> ObjectPool { get; set; }
 
@@ -24,7 +24,12 @@ public class Bullet : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        // Return bullet to pool on collision
+        // HitboxComponent hitbox = collision.gameObject.GetComponent<HitboxComponent>();
+        // if (hitbox != null)
+        // {
+        //     hitbox.Damage(damage);
+        // }
+
         ObjectPool.Release(this);
     }
 

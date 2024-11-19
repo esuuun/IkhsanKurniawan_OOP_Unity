@@ -122,6 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootIntervalInSeconds: 0.1
+  isEnemyBossWeapon: 0
   bullet: {fileID: 6210919522872227043}
   bulletSpawnPoint: {fileID: 781658309354035394}
   parentTransform: {fileID: 0}
@@ -150,7 +151,7 @@ Transform:
   m_GameObject: {fileID: 9092943708830993425}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.978, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -204,8 +205,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1435616966571831084, guid: d6058bca08295a44585feb8a821163a7, type: 3}
+      propertyPath: damage
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2186875840476109201, guid: d6058bca08295a44585feb8a821163a7, type: 3}
+      propertyPath: damage
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 5321350918689464004, guid: d6058bca08295a44585feb8a821163a7, type: 3}
       propertyPath: m_Name
+      value: Bullet
+      objectReference: {fileID: 0}
+    - target: {fileID: 5321350918689464004, guid: d6058bca08295a44585feb8a821163a7, type: 3}
+      propertyPath: m_TagString
       value: Bullet
       objectReference: {fileID: 0}
     m_RemovedComponents: []

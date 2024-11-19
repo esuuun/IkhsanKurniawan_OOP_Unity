@@ -12,10 +12,13 @@ GameObject:
   - component: {fileID: 331789344982192961}
   - component: {fileID: 3565873153877412839}
   - component: {fileID: 575592939017297767}
+  - component: {fileID: 64010703822436613}
+  - component: {fileID: 1119659754982758360}
+  - component: {fileID: 8446867724432656527}
   - component: {fileID: 1618650671285231099}
   m_Layer: 0
   m_Name: Enemy Boss
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,6 +79,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Level: 0
   speed: 5
+  weapon: {fileID: 58254792793545220, guid: 3d0bd13a67a33524c94ed18873969310, type: 3}
+  shootSpeedInterval: 0.5
 --- !u!212 &575592939017297767
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -116,7 +121,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -1170211725823879284, guid: 913e4d4426fd560498671ffe9077719d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -128,6 +133,46 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &64010703822436613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7298920435531914938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d662eb7b3b00b3040be61306d3a88902, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 1119659754982758360}
+--- !u!114 &1119659754982758360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7298920435531914938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49d1ca2ac69809d419fe331ff2b63fd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 700
+--- !u!114 &8446867724432656527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7298920435531914938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71072c53f05972f458d26d76a433fcb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 0}
+  damage: 10
 --- !u!61 &1618650671285231099
 BoxCollider2D:
   m_ObjectHideFlags: 0

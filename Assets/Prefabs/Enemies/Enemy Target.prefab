@@ -13,9 +13,12 @@ GameObject:
   - component: {fileID: 4250618458358205611}
   - component: {fileID: 5641687698433805796}
   - component: {fileID: 4637300202212979193}
+  - component: {fileID: 7865759252173366126}
+  - component: {fileID: 4705764730692576248}
+  - component: {fileID: 8124898858486631942}
   m_Layer: 0
   m_Name: Enemy Target
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -173,3 +176,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Level: 0
   speed: 2
+--- !u!114 &7865759252173366126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220216240891314334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71072c53f05972f458d26d76a433fcb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 0}
+  damage: 100
+--- !u!114 &4705764730692576248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220216240891314334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49d1ca2ac69809d419fe331ff2b63fd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 300
+--- !u!114 &8124898858486631942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220216240891314334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d662eb7b3b00b3040be61306d3a88902, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 4705764730692576248}

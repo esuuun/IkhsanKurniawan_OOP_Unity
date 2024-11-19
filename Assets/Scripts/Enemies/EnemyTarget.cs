@@ -6,8 +6,10 @@ public class EnemyTarget : Enemy
     private Vector2 screenBounds;
     private Transform player;
 
+    private AttackComponent attackComponent;
     void Start()
-    {
+    {   
+        attackComponent = GetComponent<AttackComponent>();
         // Initialize enemy level or other properties if needed
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
         SpawnFromRandomSide();

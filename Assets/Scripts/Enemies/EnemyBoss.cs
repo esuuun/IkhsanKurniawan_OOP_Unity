@@ -1,15 +1,26 @@
-    using UnityEngine;
+using UnityEngine;
 
 public class EnemyBoss : Enemy
 {
     public float speed = 5f;
     private Vector2 screenBounds;
+    public Weapon weapon;
+    [SerializeField] private float shootSpeedInterval = 1f; 
 
+    private AttackComponent attackComponent;
     void Start()
-    {
+    {   
+        attackComponent = GetComponent<AttackComponent>(); 
         // Initialize enemy level or other properties if needed
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
         SpawnFromRandomSide();
+        if (weapon != null)
+        {
+            weapon = Instantiate(weapon, transform);
+            weapon.transform.localPosition = Vector3.zero;
+            weapon.transform.localRotation = Quaternion.Euler(0, 0, 180); // Rotate the weapon 180 degrees
+            weapon.shootIntervalInSeconds = shootSpeedInterval; // Set the shoot interval based on shoot speed
+        }
     }
 
     void Update()

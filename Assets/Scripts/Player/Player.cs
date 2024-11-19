@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    // Start is called before the first frame update
     public PlayerMovement playerMovement;
     public Animator animator;
 
     public static Player instance { get; private set; }
-    
+    HealthComponent health;
 
+    HitboxComponent hitbox;
+    
     void Start()
     {
         playerMovement = GetComponent<PlayerMovement>();
-
+        hitbox = GetComponent<HitboxComponent>();
+        
         animator= GameObject.Find("EngineEffect").GetComponent<Animator>();
     }
 
@@ -25,9 +27,13 @@ public class Player : MonoBehaviour
     }
 
     void Awake()
-    {
+    {      
+        health = GetComponent<HealthComponent>();
+        
+        hitbox = GetComponent<HitboxComponent>(); 
+
         if (instance == null)
-        {
+        {   
             instance = this;
         }
         else

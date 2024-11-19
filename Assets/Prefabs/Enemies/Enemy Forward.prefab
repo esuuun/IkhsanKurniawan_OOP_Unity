@@ -10,12 +10,15 @@ GameObject:
   m_Component:
   - component: {fileID: 4462026428128284811}
   - component: {fileID: 3742050387879122003}
+  - component: {fileID: 3881679597002489318}
+  - component: {fileID: 1113320334996507808}
   - component: {fileID: 4250618458358205611}
   - component: {fileID: 5641687698433805796}
+  - component: {fileID: 7717126081126116182}
   - component: {fileID: -8552096033822026785}
   m_Layer: 0
   m_Name: Enemy Forward
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62,6 +65,32 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &3881679597002489318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220216240891314334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d662eb7b3b00b3040be61306d3a88902, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 1113320334996507808}
+--- !u!114 &1113320334996507808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220216240891314334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49d1ca2ac69809d419fe331ff2b63fd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 300
 --- !u!212 &4250618458358205611
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -159,6 +188,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.50851417, y: 0.5473738}
   m_EdgeRadius: 0
+--- !u!114 &7717126081126116182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220216240891314334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71072c53f05972f458d26d76a433fcb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 0}
+  damage: 10
 --- !u!114 &-8552096033822026785
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,8 +5,8 @@ using System.Collections;
 public class Weapon : MonoBehaviour
 {   
     [Header("Weapon Stats")]
-    [SerializeField] private float shootIntervalInSeconds = 3f;
-
+    [SerializeField] public float shootIntervalInSeconds = 3f; // Change to public
+    [SerializeField] private bool isEnemyBossWeapon; // Add this line
 
     [Header("Bullets")]
     public Bullet bullet;
@@ -43,11 +43,25 @@ public class Weapon : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if (timer >= shootIntervalInSeconds)
+        float interval =  shootIntervalInSeconds; // Adjust the intervalot
+        if (timer >= interval)
         {
             timer = 0f;
             Bullet bulletInstance = objectPool.Get();
             // No need to start the coroutine here
+        }
+    }
+
+    public void Fire(Vector3 position, Quaternion rotation)
+    {
+        float interval =  shootIntervalInSeconds; // Adjust the interval
+        if (timer >= interval)
+        {
+            timer = 0f;
+            Bullet bulletInstance = objectPool.Get();
+            bulletInstance.transform.position = position;
+            bulletInstance.transform.rotation = rotation;
+            bulletInstance.Initialize();
         }
     }
 

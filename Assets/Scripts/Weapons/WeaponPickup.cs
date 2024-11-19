@@ -35,20 +35,19 @@ public class WeaponPickup : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") || other.CompareTag("Boss"))
         {
             Weapon currentWeapon = other.GetComponentInChildren<Weapon>();
             if (currentWeapon != null)
             {
-                currentWeapon.transform.SetParent(null); // Detach the current weapon from the player
+                currentWeapon.transform.SetParent(null); // Detach the current weapon from the player or enemy
                 currentWeapon.transform.position = transform.position; // Move it to the pickup position
                 TurnVisual(false, currentWeapon); // Hide the current weapon
             }
 
             weapon.transform.SetParent(other.transform);
-            weapon.transform.localPosition = Vector3.zero; // Reset position relative to player
+            weapon.transform.localPosition = Vector3.zero; // Reset position relative to player or enemy
             TurnVisual(true, weapon);
-            
         }
     }
 
