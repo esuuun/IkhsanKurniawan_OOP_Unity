@@ -1,42 +1,58 @@
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+
 
 public class CombatManager : MonoBehaviour
 {
     public EnemySpawner[] enemySpawners;
     public float timer = 0;
     [SerializeField] private float waveInterval = 5f;
-    public int waveNumber = 1;
+    public int waveNumber = 0;
     public int totalEnemies = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(SpawnWaves());
+
+        waveNumber = 0;
+        foreach (EnemySpawner enemySpawner in enemySpawners)
+        {
+            enemySpawner.combatManager = this;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
-    }
 
-    private IEnumerator SpawnWaves()
-    {
-        while (true)
+
+        if (totalEnemies <= 0)
         {
-            yield return new WaitForSeconds(waveInterval);
-            SpawnEnemies();
-            waveNumber++;
+            timer += Time.deltaTime;
+            if (timer >= waveInterval)
+            {
+                timer = 0;
+                StartNextWave();
+            }
         }
     }
 
-    private void SpawnEnemies()
+    private void StartNextWave()
     {
-        foreach (var spawner in enemySpawners)
+
+        timer = 0;
+        waveNumber++;
+        // Debug.Log("Starting wave " + waveNumber);
+        foreach (EnemySpawner enemySpawner in enemySpawners)
         {
-            totalEnemies += spawner.spawn(waveNumber);
+            Debug.Log("Starting enemy spawner");
+            enemySpawner.startSpawning();
         }
+    }
+
+    public void onDeath()
+    {
+        totalEnemies--;
     }
 }

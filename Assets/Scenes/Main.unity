@@ -400,11 +400,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnedEnemy: {fileID: 3140204225217107826, guid: adf242e66c9f1994793a7cf000a3f5cd, type: 3}
-  minimumKillsToIncreaseSpawnCount: 3
+  minimumKillsToIncreaseSpawnCount: 6
   totalKill: 0
   spawnInterval: 3
-  spawnCount: 0
-  defaultSpawnCount: 1
+  spawnCount: 2
+  defaultSpawnCount: 2
   spawnCountMultiplier: 1
   multiplierIncreaseCount: 1
   combatManager: {fileID: 1032979822}
