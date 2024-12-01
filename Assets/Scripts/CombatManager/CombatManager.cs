@@ -10,6 +10,7 @@ public class CombatManager : MonoBehaviour
     [SerializeField] private float waveInterval = 5f;
     public int waveNumber = 0;
     public int totalEnemies = 0;
+    public int totalPoints = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -51,8 +52,11 @@ public class CombatManager : MonoBehaviour
         }
     }
 
-    public void onDeath()
+    public void onDeath(Enemy enemy)
     {
         totalEnemies--;
+        totalPoints += enemy.Level;
     }
+
+
 }

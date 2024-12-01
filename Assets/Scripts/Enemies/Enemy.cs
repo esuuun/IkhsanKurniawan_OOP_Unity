@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
         if (enemySpawner != null && combatManager != null)
         {
             enemySpawner.onDeath();
-            combatManager.onDeath();
+            combatManager.onDeath(this);
 
         }
 

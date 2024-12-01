@@ -14,6 +14,10 @@ public class HealthComponent : MonoBehaviour
     {
         get { return health; }
     }
+    public int CurrentHealth
+    {
+        get { return health; }
+    }
 
     public void Subtract(int amount)
     {

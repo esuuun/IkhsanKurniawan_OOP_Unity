@@ -15,10 +15,12 @@ public class GameManager : MonoBehaviour
         foreach (Transform child in transform)
         {
             if (child.GetComponent<Canvas>() != null || child.GetComponent<UnityEngine.UI.Image>() != null)
-            {
+            {   
+                // child.transform.GetChild(0).gameObject.SetActive(false);
                 child.gameObject.SetActive(false);
             }
         }
+
         if (Instance != null && Instance != this)
         {
             Destroy(this);

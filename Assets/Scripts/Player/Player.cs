@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     public Animator animator;
 
     public static Player instance { get; private set; }
-    HealthComponent health;
+    public HealthComponent health;
 
     HitboxComponent hitbox;
     

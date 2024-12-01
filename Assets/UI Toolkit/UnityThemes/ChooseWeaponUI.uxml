@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement style="flex-grow: 1; -unity-font: url(&quot;project://database/Assets/TextMesh%20Pro/Examples%20&amp;%20Extras/Fonts/Electronic%20Highway%20Sign.TTF?fileID=12800000&amp;guid=8a2b9e2a607dd2143b58c44bc32410b4&amp;type=3#Electronic Highway Sign&quot;); color: rgb(0, 0, 0);">
+        <ui:Label tabindex="-1" text="Kontol Ulil" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 48px; -unity-font: url(&quot;project://database/Assets/TextMesh%20Pro/Examples%20&amp;%20Extras/Fonts/Electronic%20Highway%20Sign.TTF?fileID=12800000&amp;guid=8a2b9e2a607dd2143b58c44bc32410b4&amp;type=3#Electronic Highway Sign&quot;); -unity-font-style: bold; -unity-text-align: upper-center; color: rgb(255, 255, 255); text-shadow: 0 0 0 rgba(0, 0, 0, 0);" />
+    </ui:VisualElement>
+</ui:UXML>
